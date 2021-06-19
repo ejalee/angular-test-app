@@ -22,7 +22,6 @@ jobs:
         node-version: '12.x'
 
     - name: npm install, build, and test
-      working-directory: ./ChatBoxApp-SPA
       run: |
         npm install
         npm run build:prod
