@@ -24,13 +24,13 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        npm run build -- --prod
+        npm run build --prod
+      working-directory: .
 
     - name: 'Deploy to Azure Web App'
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'ejalee-angular'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_1734912956f241189c46a0257d65bee2 }}
-        package: ./dist/ejalee-angular
+        package: ./dist/hello-world-app
